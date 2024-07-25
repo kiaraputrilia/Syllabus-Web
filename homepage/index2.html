@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Perpetually, In Fermentation</title>
+  <link rel="stylesheet" href="styles2.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+   $(document).ready(function() {
+      // Function to show content based on dropdown selection
+      $('select[name="ReqType"]').change(function() {
+        // Hide all content sections first
+        $('.content-section').hide();
+        
+        // Get the selected value
+        var selectedValue = $(this).val();
+        
+        // Show the corresponding content section based on the selected value
+        $('#' + selectedValue).show();
+      });
+
+      // Show the About section initially
+      $('#about').show();
+    });
+  </script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-group">
+          <select name="ReqType" class="form-control select2" style="width: 100%;" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="syllabus">Syllabus</option>
+            <option value="" disabled selected>Output</option>
+            <option value="spiceIndex">A Spice Index</option>
+            <option value="" disabled selected>Things that inspire me</option>
+            <option value="spiceIndex">A Spice Index</option>
+
+          </select>
+        </div>
+        <!-- /.form-group -->
+        <a href="https://www.example.com" target="_blank" class="button-link">Go to Website</a>
+      </div>
+      <!-- /.col -->
+    
+      <!-- Content sections to show based on selection -->
+      <div id="about" class="content-section" style="display: none;">
+        <h2>About</h2>
+        <p>This is the about content.</p>
+      </div>
+    
+      <div id="syllabus" class="content-section" style="display: none;">
+        <h2>Syllabus</h2>
+        <p>This is the syllabus content.</p>
+        
+        <!-- Embedding Google Sheets using iframe -->
+        <iframe src="https://docs.google.com/spreadsheets/d/e/12XFJ3Fg60iL7nRZxfZo3s03qE3i5mw4KJ5q2dCp5Q1Q/pubhtml?gid=1202273559&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="600"></iframe>
+      </div>
+    
+      <div id="spiceIndex" class="content-section" style="display: none;">
+        <h2>A Spice Index</h2>
+        <p>This is the spice index content.</p>
+        <!-- Add content for spice index section if needed -->
+      </div>
+    </body>
+    </html>

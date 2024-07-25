@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=1050, user-scalable=no">
+  <script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
+  <script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
+</head>
+<body>
+  <div class="flipbook-viewport">
+    <div class="container">
+      <div class="flipbook one"></div>
+      <div class="flipbook two"></div>
+      <div class="flipbook three"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src='js/main.js'></script>
+  <script type="text/javascript">
+    function loadApp() {
+      // Create the flipbook
+      const flipbook1 = $('.one');
+      const flipbook2 = $('.two');
+      const flipbook3 = $('.three');
+
+      // Loop to generate div elements for each page
+      const numberOfPages1 = 8; // Define the number of pages
+      for (let i = 1; i <= numberOfPages1; i++) {
+        const imageURL = `imgs/imgs1/${i}.png`;
+        const div = $('<div></div>').css('background-image', `url(${imageURL})`);
+        flipbook1.append(div);
+      }
+
+      const numberOfPages2 = 8; // Define the number of pages
+      for (let i = 1; i <= numberOfPages2; i++) {
+        const imageURL = `imgs/imgs2/${i}.png`;
+        const div = $('<div></div>').css('background-image', `url(${imageURL})`);
+        flipbook2.append(div);
+      }
+
+      const numberOfPages3 = 12; // Define the number of pages
+      for (let i = 1; i <= numberOfPages3; i++) {
+        const imageURL = `imgs/imgs3/${i}.png`;
+        const div = $('<div></div>').css('background-image', `url(${imageURL})`);
+        flipbook3.append(div);
+      }
+
+      flipbook1.turn({
+        width: 650,
+        height: 900,
+        elevation: 50,
+        gradients: true,
+        autoCenter: true,
+      });
+      flipbook2.turn({
+        width: 850,
+        height: 900,
+        elevation: 50,
+        gradients: true,
+        autoCenter: true,
+      });
+      flipbook3.turn({
+        width: 1050,
+        height: 900,
+        elevation: 50,
+        gradients: true,
+        autoCenter: true,
+      });
+    }
+
+    yepnope({
+      test: Modernizr.csstransforms,
+      yep: ['lib/turn.js', 'js/main.js'],
+      nope: ['lib/turn.html4.min.js'],
+      both: ['css/basic.css'],
+      complete: loadApp,
+    });
+  </script>
+</body>
+</html>

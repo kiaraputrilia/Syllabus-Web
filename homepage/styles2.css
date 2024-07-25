@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'ABCDiatype';
+    src: url('fonts/ABCDiatypeVariable-Trial.ttf') format('truetype'); 
+}
+
+body {
+    font-family: 'ABCDiatype', sans-serif;
+	text-align: left;
+    background-color: lightgray;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+  }
+  .form-group {
+    flex-grow: 1; /* This allows the dropdown to take as much space as possible */
+  }
+  .select2 {
+    width: 100%; /* Ensures the dropdown takes up the full width of the form group */
+  }
+  .button-link {
+    margin-left: 10px;
+    padding: 6px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .button-link:hover {
+    background-color: #0056b3;
+  }

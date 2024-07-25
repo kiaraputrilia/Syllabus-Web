@@ -1,0 +1,387 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%; /* Ensure full height of the viewport */
+}
+
+
+@font-face {
+    font-family: 'Caxton';
+    src: url('CAXTON~4.TTF') format('truetype'); 
+  }
+
+
+@font-face {
+    font-family: 'ABCDiatype';
+    src: url('fonts/ABCDiatypeVariable-Trial.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: 'ABCDiatypeSemi';
+    src: url('fonts/ABCDiatypeSemi-MonoVariable-Trial.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: 'Caxton';
+    src: url('fonts/caxton.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: 'Caxton5';
+    src: url('fonts/CAXTON~5.TTF') format('truetype'); 
+}
+
+@font-face {
+    font-family: 'Caxton3';
+    src: url('fonts/CAXTON~3.TTF') format('truetype'); 
+}
+
+@font-face {
+    font-family: 'Caxton11';
+    src: url('fonts/CAXTO~11.TTF') format('truetype'); 
+}
+
+/* @font-face {
+    font-family: 'Cmunbi';
+    src: url('fonts/cmunbi.ttf') format('truetype'); 
+} */
+
+body {
+    color: white;
+    background-color: white;
+    /* background-color: rgb(255, 250, 160); */
+    font-family: 'Caxton11', serif; /* Use the font-family you defined in @font-face */
+    font-size: 1.25vw;
+    line-height: 1.15;
+    /* text-transform: lowercase; */
+    overflow: scroll;
+}
+  
+  
+.image-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch; /* Ensure columns stretch to full height */
+    height: 100vh; /* Full height of the viewport */
+}
+.image-column {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.draggable-video-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 200px; /* Adjust the size as needed */
+    cursor: move; /* Change cursor to indicate draggable element */
+    z-index: 3; /* Ensure it is above the image */
+}
+
+.draggable-video {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+}
+
+.close-video {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #f00;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 25px;
+    font-size: 18px;
+    z-index: 4; /* Ensure the button is above the video */
+}
+
+.close-video:hover {
+    background: #d00;
+}
+
+/* Media Queries for each set of images */
+@media screen and (min-width: 300px){
+    .image-columns .image-column:nth-child(1) .responsive-image {
+        display: block; /* Show images in first column */
+    }
+    /* Hide images in other columns */
+    .image-columns .image-column:not(:nth-child(1)) .responsive-image {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .image-columns .image-column:nth-child(2) .responsive-image {
+        display: block; /* Show images in second column */
+    }
+    /* Hide images in other columns */
+    .image-columns .image-column:not(:nth-child(2)) .responsive-image {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .image-columns .image-column:nth-child(3) .responsive-image {
+        display: block; /* Show images in third column */
+    }
+    /* Hide images in other columns */
+    .image-columns .image-column:not(:nth-child(3)) .responsive-image {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .image-columns .image-column:nth-child(4) .responsive-image {
+        display: block; /* Show images in fourth column */
+    }
+    /* Hide images in other columns */
+    .image-columns .image-column:not(:nth-child(4)) .responsive-image {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .image-columns .image-column:nth-child(5) .responsive-image {
+        display: block; /* Show images in fifth column */
+    }
+    /* Hide images in other columns */
+    .image-columns .image-column:not(:nth-child(5)) .responsive-image {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .image-columns .image-column:nth-child(6) .responsive-image {
+        display: block; /* Show images in sixth column */
+    }
+    /* Hide images in other columns */
+    .image-columns .image-column:not(:nth-child(6)) .responsive-image {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .image-columns .image-column:nth-child(7) .responsive-image {
+        display: block; /* Show images in seventh column */
+    }
+    /* Hide images in other columns */
+    .image-columns .image-column:not(:nth-child(7)) .responsive-image {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .image-columns .image-column:nth-child(8) .responsive-image {
+        display: block; /* Show images in eighth column */
+    }
+    /* Hide images in other columns */
+    .image-columns .image-column:not(:nth-child(8)) .responsive-image {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .image-columns .image-column:nth-child(9) .responsive-image {
+        display: block; /* Show images in eighth column */
+    }
+    /* Hide images in other columns */
+    .image-columns .image-column:not(:nth-child(9)) .responsive-image {
+        display: none;
+    }
+}
+
+.image-container {
+    position: relative;
+    z-index: 1; /* Ensure the image container is below the video container */
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Fixed positioning to stay on top of the content */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    z-index: 2; /* Ensure the video container is above the image container */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background to highlight the video */
+    pointer-events: none; /* Allow clicks to pass through to the video */
+}
+
+.video-container video {
+    max-width: 80%; /* Adjust as needed */
+    max-height: 80%; /* Adjust as needed */
+    pointer-events: auto; /* Enable clicks on the video */
+    cursor: move; /* Indicate that the element is draggable */
+    position: relative;
+}
+
+
+
+/* MODAL */
+
+/* The Modal (background) */
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    overflow: scroll;
+    width: calc(50% - 80px);
+    height: 86vh;
+    /*top: 7vh;*/
+    bottom: 7vh;
+    right: 40px;
+    transform: rotate(-6deg);
+    transition: .5s;
+  }
+  
+  .modal-open {
+    bottom: -81vh;
+    transform: none;
+    transform: rotate(-1.5deg);
+  }
+  
+  .modal-open:hover {
+    bottom: -76vh;
+    transition: .5s;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-image: url("images/pink-3.png");
+    background-color: #06a552;
+    position: absolute;
+    padding-left: 20px;
+    padding-right: 20px;
+    -ms-overflow-style: none;
+  }
+  
+  .modal::-webkit-scrollbar {
+      display: none;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    font-size: 50px;
+    position: absolute;
+    z-index: 1000;
+    top: 10;
+    right: 10;
+  
+  }
+  
+  .modal-x {
+    width: 18px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /*#showModal {
+    position: absolute;
+    background-color: none;
+    z-index: 10;
+    border: none;
+    background: none;
+    right: 0;
+    margin: -30px 25px 0 0;
+  }*/
+  
+  button:hover,
+  button:focus {
+      border: none;
+      outline: none;
+  }
+  
+  button:focus {
+      border: none;
+      outline: none;
+  }
+  
+  button:active {
+      border: none;
+      outline: none;
+  }
+  
+  .preface-button {
+    width: 200px;
+  }
+  
+  .tab {
+    margin-left: 10%;
+    margin-right: 10%
+  }
+  
+  .emphasis {
+    font-family: "CenturySchoolbookW01-It1119213", serif;
+    font-size: 1.25em;
+    line-height: 1.15em;
+  }
+  
+  .preface-intro {
+    width: 86%;
+    margin: 40px 0 30px 6%;
+  }
+  
+  .modal-title {
+    font-family: 'Caxton', serif;
+    font-size: 3.3vw;
+    line-height: .9em;
+    margin: 15px 0 40px 17px;
+    padding-right: 20px;
+  }
+
+  .italic {
+    font-family: 'Caxton', serif;
+    font-style: italic;
+    font-size: 2vw;
+    line-height: 1em;
+    margin: 0; 
+    padding-right: 20px;
+  }
+
+  .text {
+    font-family: 'ABCDiatype', sans-serif;
+    font-size: 2vw;
+    line-height: 1em;
+    margin: 15px 0 40px 17px;
+    padding-right: 20px;
+  }
+
+  #menu {
+    display: none;
+  }
+  
+  #showMenu {
+    display: none;
+  }
+  
+
+
